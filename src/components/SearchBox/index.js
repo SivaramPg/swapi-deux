@@ -22,5 +22,6 @@ const SearchInput = styled.input`
 		border-radius: 5px;
 		padding: 0 20px;
 		font-size: 24px;
+		margin: 20px 0;
 	}
 `;
