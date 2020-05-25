@@ -24,12 +24,39 @@ const CardsSection = styled.section`
 
 		overflow-y: scroll;
 
-		border: 1px solid black;
+		border: 1px solid #eee;
 
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
 
 		flex-flow: row wrap;
+
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+		background-color: paleturquoise;
+
+		margin-bottom: 100px;
+
+		/* width */
+		::-webkit-scrollbar {
+			width: 5px;
+		}
+
+		/* Track */
+		::-webkit-scrollbar-track {
+			background: #f1f1f1;
+		}
+
+		/* Handle */
+		::-webkit-scrollbar-thumb {
+			background: #888;
+			border-radius: 2.5px;
+		}
+
+		/* Handle on hover */
+		::-webkit-scrollbar-thumb:hover {
+			background: #555;
+		}
 	}
 `;
