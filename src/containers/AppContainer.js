@@ -23,11 +23,12 @@ const AppContainer = () => {
 
 				const result = await Promise.allSettled(characterPromises);
 
-				const usableCharacters = result
-					.filter((obj) => {
-						return !Object.keys(obj.value).includes('detail');
-					})
-					.map((obj) => obj.value);
+				const usableCharacters = result.reduce((acc, obj) => {
+					if (!Object.keys(obj.value).includes('detail')) {
+						return [...acc, obj.value];
+					}
+					return acc;
+				}, []);
 
 				setFilteredCharacterDetails((filteredCharacterDetails) => [
 					...filteredCharacterDetails,
