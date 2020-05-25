@@ -9,6 +9,8 @@ const PageContainer = styled.div`
 	align-items: center;
 
 	flex-flow: column nowrap;
+
+	background-color: #eee;
 `;
 
 export default PageContainer;
