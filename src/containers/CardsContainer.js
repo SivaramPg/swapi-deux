@@ -24,8 +24,6 @@ const CardsSection = styled.section`
 
 		overflow-y: scroll;
 
-		border: 1px solid #eee;
-
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
@@ -36,6 +34,7 @@ const CardsSection = styled.section`
 
 		background-color: paleturquoise;
 
+		padding: 20px 0;
 		margin-bottom: 100px;
 
 		/* width */
