@@ -21,7 +21,7 @@ const Footer = () => {
               fontWeight: 'bold',
               color: 'darkorchid',
             }}
-            href="https://sivarampg.com"
+            href="https://sivaramp.com"
           >
             Sivaram Pandariganthan
           </a>
@@ -70,14 +70,14 @@ const Footer = () => {
           Data Fetched From:
         </p>
         <TechLink>
-          <img src="https://swapi.dev/static/favicon.ico" alt="swapi.dev" />
+          <img src="https://swapi.info/favicon.ico" alt="swapi.info" />
           &nbsp;
           <a
-            href="https://swapi.dev/"
+            href="https://swapi.info/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            swapi.dev
+            Swapi.info
           </a>
         </TechLink>
       </FooterColumn>

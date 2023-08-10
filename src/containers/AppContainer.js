@@ -6,8 +6,6 @@ import CardsContainer from '../containers/CardsContainer';
 import Loader from '../components/Loader';
 import Footer from '../components/Footer';
 
-import characterUrls from '../utils/characterUrls';
-
 const AppContainer = () => {
   const [isLoading, setLoading] = useState(true);
   const [searchText, setSearchText] = useState('');
@@ -17,18 +15,11 @@ const AppContainer = () => {
   useEffect(() => {
     (async function () {
       try {
-        const characterPromises = characterUrls.map((url) =>
-          fetch(url).then((res) => res.json())
+        const characters = await fetch('https://swapi.info/api/people').then(
+          (res) => res.json()
         );
 
-        const result = await Promise.allSettled(characterPromises);
-
-        const usableCharacters = result.reduce((acc, obj) => {
-          if (!Object.keys(obj.value).includes('detail')) {
-            return [...acc, obj.value];
-          }
-          return acc;
-        }, []);
+        const usableCharacters = characters;
 
         setFilteredCharacterDetails((filteredCharacterDetails) => [
           ...filteredCharacterDetails,
@@ -68,8 +59,8 @@ const AppContainer = () => {
         <Title>Star Wars Characters</Title>
         <SubTitle>
           A list of people from the star wars universe fetched from{' '}
-          <a href="https://swapi.dev" rel="noreferrer noopener" target="_blank">
-            swapi.dev
+          <a href="https://swapi.info" rel="noreferrer" target="_blank">
+            Swapi.info
           </a>
         </SubTitle>
         <SearchBox searchText={searchText} onSearch={onSearch} />
